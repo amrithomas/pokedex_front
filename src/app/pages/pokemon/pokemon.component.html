@@ -1,0 +1,39 @@
+<div class="container-fluid bg_pokedex">
+</div>
+
+<div class="container text-center mt-4">
+  <div class="row flex align-items-center justify-content-center">
+    <button (click)="teste('0','151')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">1º Geração</button>
+    <button (click)="teste('152','251')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">2º Geração</button>
+    <button (click)="teste('252','386')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">3º Geração</button>
+    <button (click)="teste('387','493')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">4º Geração</button>
+    <button (click)="teste('494','649')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">5º Geração</button>
+    <button (click)="teste('650','721')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">6º Geração</button>
+    <button (click)="teste('722','809')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">7º Geração</button>
+    <button (click)="teste('810','898')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">8º Geração</button>
+    <button (click)="teste('899','1025')" mat-raised-button color="primary" type="button" class="col-sm-4 col-md-2 mr-4 mt-2 mb-2">9º Geração</button>
+  </div>
+  <ng-container *ngFor="let chunk of chunkArray(pokemonData, 4)">
+    <div class="row mt-4 mb-4">
+      <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-col justify-center align-items-center"
+        *ngFor="let pokemon of chunk">
+        <button class="w-100 text-center mt-4 mb-4">
+          <mat-card>
+            <mat-card-header class="flex justify-center align-items-center">
+              <img mat-card-image src="{{pokemon.image}}" alt="imagem do pokemon {{pokemon.name}}">
+            </mat-card-header>
+            <div class="w-100 text-center">
+              <mat-divider class="w-80 mx-auto"></mat-divider>
+            </div>
+            <mat-card-content class="mt-2">
+              <div class="flex text-center justify-center align-items-center">
+                <h2 class="mr-2 text-uppercase">#{{ pokemon.id.toString() }}</h2>
+                <h2 class="text-capitalize">{{ pokemon.name.toString() }}</h2>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,11 @@
+.bg_pokedex {
+    background-image: url('https://pbs.twimg.com/media/DEA1iygXsAAg7vC?format=jpg&name=4096x4096');
+    // background-image: url('../../../assets/images/pokemon_by_sanshow_dgoipre-fullview.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20vw; 
+    width: 90vw;
+    z-index: -1;
+    position: relative;
+}
