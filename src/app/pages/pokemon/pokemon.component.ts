@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
 export class PokemonComponent implements OnInit {
   pokemonData: any;
   generation: string = '1';
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) {}
 
@@ -19,9 +20,11 @@ export class PokemonComponent implements OnInit {
   }
 
   getAllPokemon(limit : number, start: number) {
+    this.isLoading = true;
     this.apiService.getAllPokemon(limit, start).subscribe(
       (data) => {
         this.pokemonData = data;
+        this.isLoading = false;
         console.log(this.pokemonData);
       },
       (error) => {
